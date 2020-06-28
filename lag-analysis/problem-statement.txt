@@ -1,0 +1,28 @@
+Lag Analysis
+
+Is there a lag between a change in Bitcoin’s price being reflected in a change in network hashpower?
+
+- Bitcoin’s price is mainly an indicator of demand for Bitcoin, supply shocks are not possible since the issuance schedule is set in stone
+- Price is a function of several variables, demand for Bitcoin can be affected by various factors
+- Miners have to decide if it’s profitable to mine at a given point in time, among other factors this decision is primarily influenced by:
+    - Price of Bitcoin
+    - Availability of mining hardware
+    - Increase in transaction fees
+    - Cost of electricity
+- The amount of hashpower in the network conveys information about these factors
+- Increase in hashpower could be because new miners enter the market or existing miners buy up more computation
+- how does an increase in the price of bitcoin impact a miner’s decision to increase their hardware resources
+- Considering there is an increase in network hashpower in response to an increase in price, how long does it take for this cause-effect chain to be visible as an increase in network hashpower?
+- Miners cannot instantly acquire additional mining capacity, and because of this it is possible that the network hashrate could be a indication of an increase in price that took place a few weeks before
+- Is it possible to find out if there is a lag in response and observe how much of a lag there is between price increase leading to an increase in hashrate?
+
+- Things to be careful about:
+    - How do miners decide to purchase more hardware? How much of an increase in price would tell them to be more confident about buying more hardware?
+    - Bitcoin’s difficulty adjustment happens every two weeks and it’s main purpose is to ensure that the time between blocks is roughly 10 minutes
+    - An increase in difficulty necessitates increased computation in order to successfully mine a block. This makes it unprofitable for some miners to continue participating and they decide to exit the network. This could lead to a slight decrease in network hashrate
+
+Analysis Design:
+- Identify periods with noticeable increase in BTC price
+- After this period, investigate how hash rate changes in blocks of 2 weeks and 4 weeks after a lag of 1 to 15 weeks
+- The objective is to understand if there’s a pattern with regards to a lag between hash rate increasing in response to increase in price
+- Increase in hashrate is defined as percentage growth compared to the week that observed an increase in price
